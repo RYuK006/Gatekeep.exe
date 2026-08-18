@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --bg: #030a06;
-  --panel: #06110a;
-  --panel2: #09170e;
-  --line: rgba(52,211,153,.14);
-  --line2: rgba(52,211,153,.25);
-  --text: #e5f7eb;
-  --dim: #8bb49a;
-  --dim2: #5b856a;
-  --cyan: #34d399;
-  --violet: #10b981;
-  --green: #4ade80;
-  --amber: #34d399;
+  --bg: #000000;
+  --panel: #0b5c06;
+  --panel2: #0b5c06;
+  --line: #178a11;
+  --line2: #178a11;
+  --text: #38c431;
+  --dim: #178a11;
+  --dim2: #0b5c06;
+  --cyan: #21f216;
+  --violet: #21f216;
+  --green: #21f216;
+  --amber: #21f216;
   --red: #ef4444;
-  --pink: #10b981;
-  --acc: #34d399;
+  --pink: #21f216;
+  --acc: #21f216;
   
   --font-sans: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -28,10 +28,6 @@ body {
   color: var(--text);
   background: var(--bg);
   overflow: hidden;
-  background-image:
-    radial-gradient(900px 500px at 12% -10%, rgba(52,211,153,.10), transparent 60%),
-    radial-gradient(800px 500px at 95% 10%, rgba(16,185,129,.10), transparent 60%),
-    radial-gradient(700px 600px at 50% 120%, rgba(74,222,128,.07), transparent 60%);
 }
 
 body::before { 

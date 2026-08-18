@@ -26,7 +26,7 @@ export default function HintPanel({ levelId }: { levelId: number }) {
   const accuracy = stats.guesses > 0 ? Math.round((stats.correct / stats.guesses) * 100) : "—";
 
   return (
-    <aside className="bg-[var(--panel)] border border-[var(--line)] rounded-[18px] overflow-y-auto flex flex-col shadow-[0_12px_40px_rgba(0,0,0,0.35)] w-[332px] shrink-0">
+    <aside className="bg-[var(--panel)] backdrop-blur-[12px] border border-[var(--line)] rounded-[18px] overflow-y-auto flex flex-col shadow-[0_12px_40px_rgba(0,0,0,0.35)] w-[332px] shrink-0">
       <div className="flex items-center gap-[9px] p-[14px_16px] border-b border-[var(--line)] font-mono text-[11px] tracking-[2.5px] text-[var(--dim)] shrink-0">
         <span className="w-[20px] h-[20px] rounded-[6px] grid place-items-center text-[10px] font-bold text-[#06101e] bg-[var(--amber)]">
           3

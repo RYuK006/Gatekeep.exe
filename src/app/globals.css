@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0b5c06;
+  --bg: #032102;
   --panel: #000000;
   --panel2: #000000;
   --line: #178a11;
@@ -27,6 +27,7 @@ body {
   font-family: var(--font-sans);
   color: var(--text);
   background: var(--bg);
+  background-image: linear-gradient(160deg, #063d03 0%, #011200 100%);
   overflow: hidden;
 }
 

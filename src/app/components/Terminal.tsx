@@ -148,7 +148,7 @@ export default function Terminal({
   };
 
   return (
-    <section className="bg-[linear-gradient(180deg,rgba(19,27,50,0.9),rgba(11,16,32,0.94))] border border-[var(--line)] rounded-[18px] overflow-hidden flex flex-col shadow-[0_12px_40px_rgba(0,0,0,0.35)] flex-1 min-w-0">
+    <section className="bg-[var(--panel)] border border-[var(--line)] rounded-[18px] overflow-hidden flex flex-col shadow-[0_12px_40px_rgba(0,0,0,0.35)] flex-1 min-w-0">
       <div className="flex items-center gap-[12px] p-[13px_18px] border-b border-[var(--line)] shrink-0 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--cyan)_9%,transparent),transparent_55%)]">
 
         <div>
@@ -174,11 +174,11 @@ export default function Terminal({
           >
 
             <div className={`p-[11px_15px] text-[13.5px] leading-[1.62] font-mono shadow-[0_4px_14px_rgba(0,0,0,0.25)] whitespace-pre-wrap
-              ${msg.role === 'user'
-                ? 'bg-[linear-gradient(135deg,rgba(52,211,153,0.55),rgba(16,185,129,0.5))] border border-[rgba(52,211,153,0.35)] rounded-[14px_4px_14px_14px] text-[#eafcff]'
-                : msg.role === 'system'
-                  ? 'bg-[rgba(12,18,36,0.8)] border border-[var(--line)] text-[10.5px] tracking-[1.5px] text-[var(--dim)] rounded-full p-[6px_16px] uppercase'
-                  : 'bg-[rgba(24,33,60,0.85)] border border-[var(--line)] rounded-[4px_14px_14px_14px]'}
+              ${msg.role === 'user' 
+                ? 'bg-[var(--panel2)] border border-[var(--cyan)] rounded-[14px_4px_14px_14px] text-[var(--text)]' 
+                : msg.role === 'system' 
+                  ? 'bg-[var(--bg)] border border-[var(--line)] text-[10.5px] tracking-[1.5px] text-[var(--dim)] rounded-full p-[6px_16px] uppercase' 
+                  : 'bg-[var(--panel2)] border border-[var(--line)] rounded-[4px_14px_14px_14px]'}
               ${msg.role === 'system' && msg.content.includes('WRONG') ? '!text-[var(--red)] !border-[rgba(251,113,133,0.4)]' : ''}
               ${msg.role === 'system' && msg.content.includes('BEATEN') ? '!text-[var(--green)] !border-[rgba(52,211,153,0.4)]' : ''}
             `}>
@@ -190,7 +190,7 @@ export default function Terminal({
         {isTyping && (
           <div className="flex gap-[10px] max-w-[82%] animate-[msgIn_0.32s_cubic-bezier(0.2,0.9,0.3,1.2)]">
 
-            <div className="flex gap-[5px] p-[15px_18px] bg-[rgba(24,33,60,0.85)] border border-[var(--line)] rounded-[4px_14px_14px_14px] shadow-[0_4px_14px_rgba(0,0,0,0.25)]">
+            <div className="flex gap-[5px] p-[15px_18px] bg-[var(--panel2)] border border-[var(--line)] rounded-[4px_14px_14px_14px] shadow-[0_4px_14px_rgba(0,0,0,0.25)]">
               <i className="w-[7px] h-[7px] rounded-full bg-[var(--cyan)] animate-[tp_1.1s_infinite]" />
               <i className="w-[7px] h-[7px] rounded-full bg-[var(--cyan)] animate-[tp_1.1s_infinite] [animation-delay:0.18s]" />
               <i className="w-[7px] h-[7px] rounded-full bg-[var(--cyan)] animate-[tp_1.1s_infinite] [animation-delay:0.36s]" />
@@ -226,14 +226,14 @@ export default function Terminal({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-          placeholder="Talk to the AI… (Enter to send)"
           autoComplete="off"
           maxLength={300}
-          className="flex-1 bg-[rgba(15,22,42,0.9)] border border-[var(--line)] rounded-[12px] p-[12px_16px] text-[var(--text)] font-mono text-[13px] outline-none transition duration-200 focus:border-[var(--cyan)] focus:shadow-[0_0_0_3px_color-mix(in_srgb,var(--cyan)_18%,transparent)]"
+          className="flex-1 bg-[var(--panel2)] border border-[var(--line)] rounded-[12px] p-[12px_16px] text-[var(--text)] font-mono text-[13px] outline-none transition duration-200 focus:border-[var(--cyan)] focus:shadow-[0_0_0_3px_color-mix(in_srgb,var(--cyan)_18%,transparent)]"
+          placeholder="ENTER MESSAGE..."
         />
-        <button
+        <button 
           onClick={handleSend}
-          className="font-sans font-bold text-[13px] cursor-pointer rounded-[12px] px-[20px] text-white bg-[linear-gradient(135deg,#10b981,#059669)] border border-[rgba(52,211,153,0.3)] transition duration-200 hover:brightness-115 active:scale-95"
+          className="font-sans font-bold text-[13px] cursor-pointer rounded-[12px] px-[20px] text-[var(--bg)] bg-[var(--cyan)] border border-[var(--line)] transition duration-200 hover:brightness-115 active:scale-95"
         >
           SEND ➤
         </button>

@@ -13,7 +13,7 @@ export default function LevelSelect({
   const { unlockedLevels, completedLevels } = useGame();
 
   return (
-    <section className="bg-[linear-gradient(180deg,rgba(19,27,50,0.9),rgba(11,16,32,0.94))] border border-[var(--line)] rounded-[18px] overflow-hidden flex flex-col min-h-0 shadow-[0_12px_40px_rgba(0,0,0,0.35)] w-[272px] shrink-0">
+    <section className="bg-[var(--panel)] border border-[var(--line)] rounded-[18px] overflow-hidden flex flex-col min-h-0 shadow-[0_12px_40px_rgba(0,0,0,0.35)] w-[272px] shrink-0">
       <div className="flex items-center gap-[9px] p-[14px_16px] border-b border-[var(--line)] font-mono text-[11px] tracking-[2.5px] text-[var(--dim)] shrink-0">
         <span className="w-[20px] h-[20px] rounded-[6px] grid place-items-center text-[10px] font-bold text-[#06101e] bg-[var(--cyan)]">
           1
@@ -36,10 +36,10 @@ export default function LevelSelect({
               }}
               className={`relative border rounded-[14px] p-[13px_13px_13px_15px] cursor-pointer transition duration-220 overflow-hidden
                 ${isLocked 
-                  ? "opacity-45 cursor-not-allowed grayscale-[0.6] border-[var(--line)] bg-[rgba(17,24,44,0.6)]" 
+                  ? "opacity-45 cursor-not-allowed grayscale-[0.6] border-[var(--line)] bg-[var(--panel2)]" 
                   : isActive
-                    ? "border-[color-mix(in_srgb,var(--cyan)_55%,transparent)] bg-[linear-gradient(135deg,color-mix(in_srgb,var(--cyan)_12%,transparent),rgba(17,24,44,0.7))] shadow-[0_0_24px_color-mix(in_srgb,var(--cyan)_22%,transparent)]"
-                    : "border-[var(--line)] bg-[rgba(17,24,44,0.6)] hover:translate-x-[4px] hover:border-[var(--line2)] hover:bg-[rgba(24,33,60,0.8)]"}
+                    ? "border-[color-mix(in_srgb,var(--cyan)_55%,transparent)] bg-[var(--bg)] shadow-[0_0_24px_color-mix(in_srgb,var(--cyan)_22%,transparent)]"
+                    : "border-[var(--line)] bg-[var(--panel2)] hover:translate-x-[4px] hover:border-[var(--line2)] hover:bg-[var(--bg)]"}
               `}
             >
               {/* Left Accent Bar */}
@@ -64,7 +64,7 @@ export default function LevelSelect({
                 {isLocked ? (
                   <span className="text-[13px]">🔒</span>
                 ) : isCompleted ? (
-                  <span className="font-mono text-[9.5px] text-[var(--green)] border border-[rgba(52,211,153,0.4)] rounded-[6px] p-[2px_7px] tracking-[1px]">
+                  <span className="font-mono text-[9.5px] text-[var(--cyan)] border border-[var(--line)] rounded-[6px] p-[2px_7px] tracking-[1px]">
                     CLEARED
                   </span>
                 ) : null}

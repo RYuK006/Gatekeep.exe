@@ -148,7 +148,7 @@ export default function Terminal({
   };
 
   return (
-    <section className="bg-[var(--panel)] border border-[var(--line)] rounded-[18px] overflow-hidden flex flex-col shadow-[0_12px_40px_rgba(0,0,0,0.35)] flex-1 min-w-0">
+    <section className="bg-[var(--panel)] backdrop-blur-[12px] border border-[var(--line)] rounded-[18px] overflow-hidden flex flex-col shadow-[0_12px_40px_rgba(0,0,0,0.35)] flex-1 min-w-0">
       <div className="flex items-center gap-[12px] p-[13px_18px] border-b border-[var(--line)] shrink-0 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--cyan)_9%,transparent),transparent_55%)]">
 
         <div>

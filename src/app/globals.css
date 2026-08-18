@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --bg: #000000;
-  --panel: #0b5c06;
-  --panel2: #0b5c06;
+  --bg: #0b5c06;
+  --panel: #000000;
+  --panel2: #000000;
   --line: #178a11;
   --line2: #178a11;
   --text: #38c431;
   --dim: #178a11;
-  --dim2: #0b5c06;
+  --dim2: #000000;
   --cyan: #21f216;
   --violet: #21f216;
   --green: #21f216;
